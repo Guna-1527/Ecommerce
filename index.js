@@ -9,10 +9,10 @@ app.use(express.json());
 
 const mysql2 = require('mysql2');
 const conn = mysql2.createConnection({
-    host: 'localhost', // Replace with your host name
-    user: 'root',      // Replace with your database username
-    password: 'root',      // Replace with your database password
-    database: 'ecommerce' 
+    host: process.env.HOST, // Replace with your host name
+    user: process.env.USER,      // Replace with your database username
+    password: process.env.PASSWORD,      // Replace with your database password
+    database: process.env.DATABASE 
 })
 
   conn.connect(function(err) {
